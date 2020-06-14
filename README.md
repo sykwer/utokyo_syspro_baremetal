@@ -7,12 +7,14 @@ The bootloader is implemented referencing UEFI Specification Version 2.8 ([PDF](
 To support UEFI boot in qemu emulation, OVMF is automatically installed by `make` command. The following tools need to
 be installed by users to build the bootloader, the kernel and the apps.
 
-- mingw-w64 : Cross-compiler for building UEFI bootloader
-- qemu-system-x86 : Emulator
+- x86_64-w64-mingw32-gcc : Cross-compiler for building UEFI bootloader
+- qemu-system-x86_64 : Emulator
 - unzip : Tool for unzipping OVMF.zip
 
 ```
-$ apt install -y mingw-w64 qemu-system-x86 unzip
+$ sudo apt update
+$ sudo apt upgrade
+$ sudo apt install -y mingw-w64 qemu-system-x86 unzip git make gcc
 ```
 
 The bootloader can be built on any environment if the cross-compiler 'mingw-64' is installed. The kernel and the apps
@@ -28,7 +30,7 @@ Copyright (C) 2017 Free Software Foundation, Inc.
 
 
 ## Quick start
-After installing `mingw-64` and `qemu-system-x86`, do the following commands.
+After installing `x86_64-w64-mingw32-gcc` and `qemu-system-x86_64`, do the following commands.
 
 ```
 $ git clone https://github.com/sykwer/utokyo_syspro_baremetal
