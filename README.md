@@ -55,6 +55,59 @@ To boot from USB, follow the instructions below.
 - Copy all the files under 'fs/' directory to USB
 - Boot from USB on your real machine
 
+```
+// Find usb device file
+$ sudo fdisk -l
+// Assume this prints `/dev/sdc` here
+
+// Start fdisk session
+$ sudo fdisk /dev/sdc
+
+Command (m for help): d
+Selected partition 1
+Partition 1 has been deleted.
+
+Command (m for help): o
+Created a new DOS disklabel with disk identifier 0x190598a4.
+
+Command (m for help): n
+Partition type
+   p   primary (0 primary, 0 extended, 4 free)
+   e   extended (container for logical partitions)
+
+Select (default p): p
+Partition number (1-4, default 1): 1
+First sector (2048-61439999, default 2048):
+Last sector, +sectors or +size{K,M,G,T,P} (2048-61439999, default 61439999):
+Created a new partition 1 of type 'Linux' and of size 29.3 GiB.
+
+Command (m for help): t
+Selected partition 1
+Hex code (type L to list all codes): b
+Changed type of partition 'Linux' to 'W95 FAT32'.
+
+Command (m for help): w
+The partition table has been altered.
+Calling ioctl() to re-read partition table.
+Syncing disks.
+
+// FAT32 format
+$ sudo mkfs.vfat -F 32 /dev/sdc1
+
+// Mount USB
+$ sudo mount /dev/sdc1 /path/to/mount-point
+
+// Prepare files under fs directory
+$ cd /path/to/utokyo_syspro_baremetal/kernel
+$ make
+
+// Copy file system
+$ sudo cp -R /path/to/utokyo_syspro_baremetal/fs/* /path/to/mount-point/
+
+// Unmount
+$ sudo umount /path/to/mount-point
+```
+
 
 ## Physical memory map
 The built images of the kernel and the apps are loaded by the bootloader to the physical addresses dipicted in the figure below.
