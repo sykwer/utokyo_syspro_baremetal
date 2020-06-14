@@ -9,7 +9,6 @@ be installed by users to build the bootloader, the kernel and the apps.
 
 - x86_64-w64-mingw32-gcc : Cross-compiler for building UEFI bootloader
 - qemu-system-x86_64 : Emulator
-- unzip : Tool for unzipping OVMF.zip
 
 ```
 $ sudo apt update
@@ -25,7 +24,6 @@ version of `gcc`, but the `gcc` version on writer's test environment is shown be
 $ gcc --version
 
 gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0
-Copyright (C) 2017 Free Software Foundation, Inc.
 ```
 
 
