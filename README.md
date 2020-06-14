@@ -102,7 +102,7 @@ $ cd /path/to/utokyo_syspro_baremetal/kernel
 $ make
 
 // Copy file system
-$ cp -R /path/to/utokyo_syspro_baremetal/fs/* /path/to/mount-point/
+$ sudo cp -R /path/to/utokyo_syspro_baremetal/fs/* /path/to/mount-point/
 
 // Unmount
 $ sudo umount /path/to/mount-point
