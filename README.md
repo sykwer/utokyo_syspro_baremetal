@@ -16,8 +16,7 @@ $ sudo apt upgrade
 $ sudo apt install -y mingw-w64 qemu-system-x86 unzip git make gcc
 ```
 
-The bootloader can be built on any environment if the cross-compiler 'mingw-64' is installed. The kernel and the apps
-have to be built on x86_64 Linux (in order to use `-T` option of `ld` command). I do not assume some specific
+The bootloader can be built on any environment if the cross-compiler `x86_64-w64-mingw32-gcc` is installed. The kernel and the apps have to be built on x86_64 Linux (in order to use `-T` option of `ld` command). I do not assume some specific
 version of `gcc`, but the `gcc` version on writer's test environment is shown below.
 
 ```
