@@ -3,7 +3,7 @@ OUTPUT_FORMAT("binary");
 MEMORY
 {
 	dummy(r) : ORIGIN = 0x123456789, LENGTH = 16m
-	ram(rwx) : ORIGIN = 0x105000000, LENGTH = 16m
+	ram(rwx) : ORIGIN = 0x106000000, LENGTH = 16m
 }
 
 SECTIONS
