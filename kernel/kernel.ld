@@ -26,4 +26,8 @@ SECTIONS
 
 		*(.eh_frame)
 	} > ram AT> dummy
+
+    /DISCARD/ : {
+        *(*)
+    }
 }
