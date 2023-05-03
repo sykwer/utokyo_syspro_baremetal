@@ -1,6 +1,5 @@
 # utokyo_syspro_baremetal
 Baremetal environment for "System programming lab" class in Dept. of Information Science, The University of Tokyo.
-(latest updates are made to [pflab-ut/utokyo_syspro_baremetal](https://github.com/pflab-ut/utokyo_syspro_baremetal))
 
 ## Dependencies
 The bootloader is implemented referencing UEFI Specification Version 2.8 ([PDF](https://uefi.org/sites/default/files/resources/UEFI_Spec_2_8_final.pdf)).
